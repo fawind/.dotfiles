@@ -1,3 +1,16 @@
-- clean: []
-- link: {}
-- shell: []
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/openbox: config/openbox
+    ~/.config/redshift.conf: config/redshift.conf
+    ~/.dotfiles: ''
+    ~/.nanorc: home/.nanorc
+    ~/.tmux.conf: home/.tmux.conf
+    ~/.vimrc: home/.vimrc
+    ~/.xbindkeysrc: home/.xbindkeysrc
+    ~/.Xdefaults: home/.Xdefaults
+    ~/.xinitrc: home/.xinitrc
+    ~/.zsh: home/.zshrc
+
+- shell:
+  - "git submodule update --init --recursive --remote"
