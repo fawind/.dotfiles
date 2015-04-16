@@ -1,0 +1,36 @@
+URxvt.scrollBar: false
+URxvt.font: xft:Sauce Code Powerline:style=Regular
+URxvt*letterspace: -2
+URxvt.iconFile:    /usr/share/icons/Faenza/apps/scalable/Terminal.svg
+
+URxvt.perl-ext-common: ...,tabbedex,...
+URxvt.tabbed.autohide: true
+
+!! simple_rainbow
+URxvt*background:  #575757
+URxvt*foreground:  #dcdccc
+
+!black
+URxvt*color0:      #666666
+URxvt*color8:      #888888
+!red
+URxvt*color1:      #ff8278
+URxvt*color9:      #ff8278
+!green
+URxvt*color2:      #bde077
+URxvt*color10:     #bde077
+!yellow
+URxvt*color3:      #eadc84
+URxvt*color11:     #eadc84
+!blue
+URxvt*color4:      #77bee0
+URxvt*color12:     #77bee0
+!magenta
+URxvt*color5:      #dd91f3
+URxvt*color13:     #dd91f3
+!cyan
+URxvt*color6:      #ffc178
+URxvt*color14:     #ffc178
+!white
+URxvt*color7:      #dddddd
+URxvt*color15:     #cccccc
