@@ -11,7 +11,7 @@
     ~/.xbindkeysrc: home/.xbindkeysrc
     ~/.Xdefaults: home/.Xdefaults
     ~/.xinitrc: home/.xinitrc
-    ~/.zsh: home/.zshrc
+    ~/.zshrc: home/.zshrc
 
 - shell:
   - "git submodule update --init --recursive --remote"
