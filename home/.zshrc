@@ -86,3 +86,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # fix grep: warning: GREP_OPTIONS is deprecated
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
+
+# export java path:
+if [ -d "/usr/lib/jvm/java-8-jdk" ] ; then
+    export JAVA_HOME="/usr/lib/jvm/java-8-jdk"
+fi

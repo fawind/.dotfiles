@@ -37,7 +37,7 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-"dmenu_run -b" 
+"dmenu_run -b"
   Print
 
 "urxvt"
@@ -65,11 +65,14 @@
 "amixer set Master toggle"
 	XF86AudioMute
 
-"scrot"
+"xfce4-screenshooter"
 	Mod4 + Shift + Print
 
 "slock"
 	Mod4 + Delete
+
+"xfce4-pm-helper --suspend"
+  Mod4 + Shift + Delete
 
 "/home/fabian/.screenlayout/home.sh"
 	Mod4 + equal
