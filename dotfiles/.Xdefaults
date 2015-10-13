@@ -1,12 +1,14 @@
 URxvt.scrollBar: false
-URxvt.font: xft:Sauce Code Powerline:style=Regular
 URxvt*letterspace: -2
-URxvt.iconFile:    /usr/share/icons/Faenza/apps/scalable/Terminal.svg
+URxvt.font: xft:Sauce Code Powerline:style=Regular:size=16
 
-URxvt.perl-ext-common: ...,tabbedex,...
-URxvt.tabbed.autohide: true
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
-!! simple_rainbow
+URxvt.perl-ext-common:  ...,resize-font,...
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
 URxvt*background:  #575757
 URxvt*foreground:  #dcdccc
 
