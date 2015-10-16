@@ -49,4 +49,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gits="git status"
+alias subl="subl3"
+alias vi="vim"
 alias qq="exit"

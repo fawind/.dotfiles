@@ -51,7 +51,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # Applications
 bindsym $mod+Control+1 exec "google-chrome-stable --disable-new-avatar-menu"
-bindsym $mod+Control+2 exec subl
+bindsym $mod+Control+2 exec subl3
 bindsym $mod+Control+3 exec pcmanfm
 
 # Display
@@ -59,6 +59,7 @@ bindsym $mod+Delete exec slock
 bindsym $mod+Shift+Delete exec "xfce4-pm-helper --suspend"
 bindcode $mod+21 exec "/home/fabian/.config/screenlayout/home.sh"
 bindcode $mod+20 exec "/home/fabian/.config/screenlayout/laptop.sh"
+bindsym $mod+Shift+Print exec xfce4-screenshooter
 
 # Volume
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5+"
@@ -117,7 +118,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 # Switch to workspace
 bindsym $mod+1 workspace 1
@@ -143,6 +144,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Move workspace to monitor
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+l move workspace to output right
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
@@ -162,6 +169,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Toggle bar
+bindsym $mod+Shift+b bar mode toggle
 
 ##################################################
 
@@ -184,6 +194,8 @@ client.urgent               $warning      $warning      $foreground
 # Start i3bar
 bar {
     status_command i3status
+
+    mode hide
 
     colors {
         # Bar colors        #border       #background   #text

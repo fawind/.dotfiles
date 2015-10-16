@@ -10,6 +10,8 @@ xfce4-power-manager &
 redshift-gtk &
 insync start &
 
+feh --bg-tile /usr/share/slim/themes/tiles/background.png
+
 # Start WM
 exec i3
 
