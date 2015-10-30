@@ -51,8 +51,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # Applications
 bindsym $mod+Control+1 exec "google-chrome-stable --disable-new-avatar-menu"
-bindsym $mod+Control+2 exec subl3
-bindsym $mod+Control+3 exec pcmanfm
+bindsym $mod+Control+2 exec pcmanfm
 
 # Display
 bindsym $mod+Delete exec slock
@@ -199,9 +198,9 @@ bar {
 
     colors {
         # Bar colors        #border       #background   #text
-        background          $background   
-        statusline          $foreground   
-        separator           $foreground   
+        background          $background
+        statusline          $foreground
+        separator           $foreground
         focused_workspace   $active       $active       $foreground
         active_workspace    $active       $background   $foreground
         inactive_workspace  $background   $background   $foreground
