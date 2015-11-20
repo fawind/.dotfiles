@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on
@@ -30,6 +31,7 @@ filetype plugin indent on
 set noshowmode
 set number
 set cursorline
+" set colorcolumn=80
 syntax on
 set background=dark
 colors zenburn
@@ -72,9 +74,23 @@ let g:ycm_filetype_whitelist={'cpp':1, 'c':1, 'python':1}
 " jedi-vim
 let g:jedi#completions_enabled=0
 
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Autoreaload external changes
+set autoread
+au CursorHold * checktime
 
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
