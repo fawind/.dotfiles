@@ -54,4 +54,5 @@ export PATH=$ANDROID_HOME/tools:$PATH
 alias gits="git status"
 alias subl="subl3"
 alias vi="vim"
+alias v="vim"
 alias qq="exit"

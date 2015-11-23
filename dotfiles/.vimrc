@@ -19,6 +19,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
@@ -51,9 +52,6 @@ set smartcase
 set wildmode=longest,list
 set wildmenu history=250
 
-" Reload when file changed on the disk
-set autoread
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -84,6 +82,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,3 +95,9 @@ au CursorHold * checktime
 
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Intendation settings
+set expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
