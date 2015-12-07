@@ -20,6 +20,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -60,6 +61,11 @@ set wildmenu history=250
 let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_theme='bubblegum'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -83,7 +89,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Nerdtree
-map <C-n> :NERDTreeToggle<CR>
+map <C-x> :NERDTreeToggle<CR>
+
+" Multiplecursors
+let g:multi_cursor_exit_from_visual_mode=0
+let g:multi_cursor_exit_from_insert_mode=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts
