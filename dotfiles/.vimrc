@@ -53,6 +53,12 @@ set smartcase
 set wildmode=longest,list
 set wildmenu history=250
 
+" Killing the habbits
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
