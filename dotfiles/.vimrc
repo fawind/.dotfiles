@@ -37,6 +37,8 @@ set cursorline
 syntax on
 set background=dark
 colors zenburn
+highlight LineNr ctermbg=NONE
+highlight CursorLineNr ctermbg=NONE
 
 set timeoutlen=50
 set mouse=a
