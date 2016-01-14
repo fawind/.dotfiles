@@ -12,6 +12,7 @@ dunst &
 xfce4-power-manager &
 redshift-gtk &
 insync start &
+urxvtd -q -f -o
 
 xsetroot -solid "#002B36"
 
