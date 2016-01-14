@@ -8,7 +8,7 @@ dir=~/dotfiles/dotfiles
 olddir=~/dotfiles/dotfiles_old
 # List of files/folders to symlink
 config=".config/dunst .config/i3status .config/redshift.conf .config/screenlayout"
-files="$config .i3 .Xdefaults .xinitrc .zshrc .vimrc"
+files="$config .i3 .Xresources .xinitrc .zshrc .vimrc"
 
 
 echo "Clear backup folder at $olddir"

@@ -178,11 +178,11 @@ bindsym $mod+Shift+b bar mode toggle
 ################## Color Scheme ##################
 
 # Define color scheme
-set $background   #2c2c2e
-set $foreground   #9f9f9f
-set $active       #455A64
-set $unfocused    #263238
-set $warning      #e89393
+set $background   #073642
+set $foreground   #93A1A1
+set $active       #17537D
+set $unfocused    #586E75
+set $warning      #DC322F
 
 # Window colors             #border       #background   #text
 client.focused              $active       $active       $foreground

@@ -3,6 +3,9 @@
 # ~/.xinitrc
 #
 
+# Load .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
 # Start applications
 nm-applet --sm-disable &
 dunst &
@@ -10,7 +13,7 @@ xfce4-power-manager &
 redshift-gtk &
 insync start &
 
-feh --bg-tile /usr/share/slim/themes/tiles/background.png
+xsetroot -solid "#002B36"
 
 # Start WM
 exec i3

@@ -21,7 +21,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
-
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on
 
@@ -36,7 +36,7 @@ set cursorline
 " set colorcolumn=80
 syntax on
 set background=dark
-colors zenburn
+colorscheme solarized
 highlight LineNr ctermbg=NONE
 highlight CursorLineNr ctermbg=NONE
 
@@ -68,7 +68,7 @@ imap <Right> <NOP>
 " Airline
 let g:airline_powerline_fonts = 1
 set laststatus=2
-let g:airline_theme='bubblegum'
+let g:airline_theme='solarized'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
