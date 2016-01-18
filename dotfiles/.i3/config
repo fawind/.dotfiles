@@ -66,8 +66,7 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 2%-"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 
 # Start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b
-bindsym Print exec dmenu_run -b
+bindsym $mod+d exec "dmenu_run -nb '#073642' -nf '#839496' -sb '#268bd2' -sf '#073642' -b"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
