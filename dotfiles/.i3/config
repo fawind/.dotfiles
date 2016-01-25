@@ -50,20 +50,20 @@ font pango:monospace 8
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Applications
-bindsym $mod+Control+1 exec "google-chrome-stable --disable-new-avatar-menu"
+bindsym $mod+Control+1 exec google-chrome-stable
 bindsym $mod+Control+2 exec pcmanfm
 
 # Display
 bindsym $mod+Delete exec slock
 bindsym $mod+Shift+Delete exec "xfce4-pm-helper --suspend"
-bindcode $mod+21 exec "/home/fabian/.config/screenlayout/home.sh"
-bindcode $mod+20 exec "/home/fabian/.config/screenlayout/laptop.sh"
+bindcode $mod+21 exec "~/.config/screenlayout/home.sh"
+bindcode $mod+20 exec "~/.config/screenlayout/laptop.sh"
 bindsym $mod+Shift+Print exec xfce4-screenshooter
 
 # Volume
-bindsym XF86AudioRaiseVolume exec "amixer set Master 2%+"
-bindsym XF86AudioLowerVolume exec "amixer set Master 2%-"
-bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86AudioRaiseVolume exec "~/.config/volume/increase.sh"
+bindsym XF86AudioLowerVolume exec "~/.config/volume/decrease.sh"
+bindsym XF86AudioMute exec "~/.config/volume/mute.sh"
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec "dmenu_run -nb '#073642' -nf '#839496' -sb '#268bd2' -sf '#073642' -b"
