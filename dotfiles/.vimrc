@@ -1,29 +1,30 @@
 set nocompatible
-filetype off
+
+" Install plugin manager automatically
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
+Plug 'davidhalter/jedi-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'altercation/vim-colors-solarized'
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editor settings
@@ -43,6 +44,7 @@ highlight CursorLineNr ctermbg=NONE
 set timeoutlen=50
 set mouse=a
 set autoindent
+set scrolloff=5
 
 " Search
 set showmatch
