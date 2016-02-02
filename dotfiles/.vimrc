@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'davidhalter/jedi-vim'
