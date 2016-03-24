@@ -34,3 +34,4 @@ alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [
 alias vi="vim"
 alias v="vim"
 alias emacs=vim
+alias tms='~/.config/tmux/startTmux.sh'
