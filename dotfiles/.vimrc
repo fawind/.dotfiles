@@ -24,6 +24,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
+" JS
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -98,6 +100,7 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Nerdtree
 map <C-x> :NERDTreeToggle<CR>
@@ -122,3 +125,13 @@ set expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
+
+" Allow JSX in JS files
+let g:jsx_ext_required = 0
+
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
+    \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
