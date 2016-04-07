@@ -14,8 +14,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'davidhalter/jedi-vim'
@@ -24,6 +22,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
+Plug 'Yggdroot/indentLine'
 " JS
 Plug 'mxw/vim-jsx'
 
@@ -34,10 +33,8 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Appearance
-set noshowmode
 set number
 set cursorline
-" set colorcolumn=80
 syntax on
 set background=dark
 colorscheme solarized
@@ -48,6 +45,10 @@ set timeoutlen=50
 set mouse=a
 set autoindent
 set scrolloff=5
+
+" Show title in statusline
+set laststatus=2
+set statusline=%t
 
 " Search
 set showmatch
@@ -60,25 +61,16 @@ set smartcase
 set wildmode=longest,list
 set wildmenu history=250
 
-" Killing the habbits
-imap <Up> <NOP>
-imap <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
+" Use X clipboard as default
+set clipboard=unnamedplus
+
+" Autoreaload external changes
+set autoread
+au CursorHold * checktime
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Airline
-let g:airline_powerline_fonts = 1
-set laststatus=2
-let g:airline_theme='solarized'
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -86,15 +78,11 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_complete_in_comments=0
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_max_diagnostics_to_display=10
-let g:ycm_filetype_whitelist={'cpp':1, 'c':1, 'python':1}
+
+set statusline+=%=%{SyntasticStatuslineFlag()}
 
 " jedi-vim
 let g:jedi#completions_enabled=0
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
@@ -109,13 +97,18 @@ map <C-x> :NERDTreeToggle<CR>
 let g:multi_cursor_exit_from_visual_mode=0
 let g:multi_cursor_exit_from_insert_mode=0
 
+" Ctrlp
+let g:ctrlp_working_path_mode='a'
+let g:ctrlp_user_command = {'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
+    \ }, 'fallback': 'find %s -type f'}
+
+" Allow JSX in JS files
+let g:jsx_ext_required = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Autoreaload external changes
-set autoread
-au CursorHold * checktime
 
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -126,12 +119,6 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
-" Allow JSX in JS files
-let g:jsx_ext_required = 0
-
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
-    \ },
-  \ 'fallback': 'find %s -type f'
-  \ }
+" Remove highlighting on ESC in normal mode.
+nnoremap <silent> <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
