@@ -23,8 +23,9 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
 Plug 'Yggdroot/indentLine'
+Plug 'terryma/vim-multiple-cursors'
 " JS
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -48,7 +49,7 @@ set scrolloff=5
 
 " Show title in statusline
 set laststatus=2
-set statusline=%t
+set statusline=%t%m
 
 " Search
 set showmatch
