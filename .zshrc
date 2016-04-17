@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(z sudo)
+plugins=(z)
 
 
 # User configuration
@@ -33,6 +33,4 @@ alias gita="git add -A"
 alias gitl="git log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate"
 alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]\" --decorate --numstat"
 alias vi="vim"
-alias v="vim"
-alias emacs=vim
 alias tms='~/.config/tmux/startTmux.sh'
