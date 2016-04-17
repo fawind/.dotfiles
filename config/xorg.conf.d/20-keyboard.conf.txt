@@ -1,9 +1,0 @@
-Section "InputClass"
-	Identifier "keyboard Defaults"
-	MatchIsKeyboard "yes"
-	Option "XkbLayout" "us"
-	Option "XkbVariant" "altgr-intl"
-	Option "XkbVariant" "nodeadkeys"
-	Option "XkbOptions" "ctrl:nocaps"
-EndSection
-

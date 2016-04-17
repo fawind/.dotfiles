@@ -26,6 +26,7 @@ export ANDROID_HOME=/opt/android-sdk
 export PATH=$ANDROID_HOME/tools:$PATH
 
 # Aliases
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gits="git status"
 alias gitc="git commit -m"
 alias gita="git add -A"
