@@ -120,6 +120,5 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
-" Remove highlighting on ESC in normal mode.
-nnoremap <silent> <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
+" Remove highlighting on Enter.
+nnoremap <CR> :noh<CR><CR>
