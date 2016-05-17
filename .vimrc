@@ -24,8 +24,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
 Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
+" Latex
+Plug 'lervag/vimtex'
 " JS
 " Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -35,6 +38,7 @@ call plug#end()
 
 " Appearance
 set number
+set relativenumber
 set cursorline
 syntax on
 set background=dark
@@ -57,6 +61,10 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" Leader keys
+let mapleader=","
+let maplocalleader = "\\"
 
 " Autocomplete commands
 set wildmode=longest,list
@@ -106,6 +114,24 @@ let g:ctrlp_user_command = {'types': {
 
 " Allow JSX in JS files
 let g:jsx_ext_required = 0
+
+" Vimtex
+if !exists('g:ycm_semantic_triggers')
+let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+\ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+\ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+\ 're!\\hyperref\[[^]]*',
+\ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+\ 're!\\(include(only)?|input){[^}]*',
+\ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+\ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+\ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+\ ]
+
+let g:vimtex_view_method = 'mupdf'
+let g:vimtex_latexmk_build_dir = 'build'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts
