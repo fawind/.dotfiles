@@ -22,13 +22,15 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
 " Latex
 Plug 'lervag/vimtex'
 " JS
-" Plug 'mxw/vim-jsx'
-" Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -46,7 +48,7 @@ colorscheme solarized
 highlight LineNr ctermbg=NONE
 highlight CursorLineNr ctermbg=NONE
 
-set timeoutlen=50
+set timeoutlen=500
 set mouse=a
 set autoindent
 set scrolloff=5
@@ -93,6 +95,9 @@ set statusline+=%=%{SyntasticStatuslineFlag()}
 " jedi-vim
 let g:jedi#completions_enabled=0
 
+" IndentLine
+let g:indentLine_conceallevel = 0
+
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
@@ -114,6 +119,9 @@ let g:ctrlp_user_command = {'types': {
 
 " Allow JSX in JS files
 let g:jsx_ext_required = 0
+
+let g:vimtex_view_method = 'mupdf'
+let g:vimtex_latexmk_build_dir = 'build'
 
 " Vimtex
 if !exists('g:ycm_semantic_triggers')
@@ -145,6 +153,9 @@ set expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+autocmd Filetype tex setlocal ts=2 sts=2 sw=2
 
 " Remove highlighting on Enter.
 nnoremap <CR> :noh<CR><CR>
