@@ -1,0 +1,13 @@
+[user]
+	email = windheuser.fabian@gmail.com
+	name = fawind
+[push]
+	default = simple
+[pull]
+        rebase = true
+[core]
+	excludesfile = ~/.gitignore
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
