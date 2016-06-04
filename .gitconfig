@@ -2,7 +2,7 @@
 	email = windheuser.fabian@gmail.com
 	name = fawind
 [push]
-	default = simple
+	default = current
 [pull]
         rebase = true
 [core]
