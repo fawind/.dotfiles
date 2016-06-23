@@ -10,7 +10,6 @@ COMPLETION_WAITING_DOTS="true"
 # Plugins
 plugins=(z)
 
-
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # Custom programs
@@ -26,7 +25,7 @@ export ANDROID_HOME=/opt/android-sdk
 export PATH=$ANDROID_HOME/tools:$PATH
 
 # Aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias gits="git status"
 alias gitc="git commit -m"
 alias gita="git add -A"
@@ -34,5 +33,4 @@ alias gitca="git commit --amend"
 alias gitco="git checkout"
 alias gitl="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate"
 alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate --numstat"
-alias vi="vim"
-alias tms='~/.config/tmux/startTmux.sh'
+alias tms="~/.config/tmux/startTmux.sh"

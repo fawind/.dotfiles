@@ -21,7 +21,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 " Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
 " Latex
@@ -44,11 +44,12 @@ set relativenumber
 set cursorline
 syntax on
 set background=dark
-colorscheme solarized
-highlight LineNr ctermbg=NONE
-highlight CursorLineNr ctermbg=NONE
 
-set timeoutlen=500
+let g:gruvbox_termcolors=16
+let g:gruvbox_contrast_dark='soft'
+colorscheme gruvbox
+
+set timeoutlen=1000
 set mouse=a
 set autoindent
 set scrolloff=5
@@ -120,9 +121,6 @@ let g:ctrlp_user_command = {'types': {
 " Allow JSX in JS files
 let g:jsx_ext_required = 0
 
-let g:vimtex_view_method = 'mupdf'
-let g:vimtex_latexmk_build_dir = 'build'
-
 " Vimtex
 if !exists('g:ycm_semantic_triggers')
 let g:ycm_semantic_triggers = {}
@@ -152,10 +150,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 set expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype tex setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 " Remove highlighting on Enter.
 nnoremap <CR> :noh<CR><CR>

@@ -15,7 +15,7 @@ insync start &
 unclutter &
 urxvtd -q -f -o
 
-xsetroot -solid "#002B36"
+xsetroot -solid "#282828"
 xinput --disable 11
 
 # Start WM

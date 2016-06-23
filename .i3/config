@@ -9,7 +9,7 @@
 set $mod Mod4
 
 # Hide window titles
-new_window 1pixel
+new_window none
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -177,14 +177,14 @@ bindsym $mod+Shift+b bar mode toggle
 ################## Color Scheme ##################
 
 # Define color scheme
-set $background   #073642
-set $foreground   #93A1A1
-set $active       #17537D
+set $background   #282828
+set $foreground   #a89984
+set $active       #767676
 set $unfocused    #586E75
-set $warning      #DC322F
+set $warning      #cc241d
 
 # Window colors             #border       #background   #text
-client.focused              $active       $active       $foreground
+client.focused              $active       $active       $background
 client.unfocused            $background   $background   $foreground
 client.focused_inactive     $unfocused    $unfocused    $foreground
 client.urgent               $warning      $warning      $foreground
@@ -200,7 +200,7 @@ bar {
         background          $background
         statusline          $foreground
         separator           $foreground
-        focused_workspace   $active       $active       $foreground
+        focused_workspace   $active       $active       $background
         active_workspace    $active       $background   $foreground
         inactive_workspace  $background   $background   $foreground
         urgent_workspace    $warning      $warning      $foreground
