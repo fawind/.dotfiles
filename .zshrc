@@ -20,13 +20,10 @@ source $ZSH/oh-my-zsh.sh
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Android
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$ANDROID_HOME/tools:$PATH
-
 # Aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias gits="git status"
+alias gitd="git diff"
 alias gitc="git commit -m"
 alias gita="git add -A"
 alias gitca="git commit --amend"

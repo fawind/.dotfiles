@@ -16,21 +16,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
-Plug 'davidhalter/jedi-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
-" Plug 'Yggdroot/indentLine'
-Plug 'terryma/vim-multiple-cursors'
-" Latex
-Plug 'lervag/vimtex'
-" JS
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -54,8 +45,12 @@ set mouse=a
 set autoindent
 set scrolloff=5
 
-" Show title in statusline
-set laststatus=2
+set noswapfile
+
+set splitbelow
+set splitright
+
+" Show title and modified in statusbar
 set statusline=%t%m
 
 " Search
@@ -108,36 +103,11 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Nerdtree
 map <C-x> :NERDTreeToggle<CR>
 
-" Multiplecursors
-let g:multi_cursor_exit_from_visual_mode=0
-let g:multi_cursor_exit_from_insert_mode=0
-
 " Ctrlp
 let g:ctrlp_working_path_mode='a'
 let g:ctrlp_user_command = {'types': {
     \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
     \ }, 'fallback': 'find %s -type f'}
-
-" Allow JSX in JS files
-let g:jsx_ext_required = 0
-
-" Vimtex
-if !exists('g:ycm_semantic_triggers')
-let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-\ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-\ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-\ 're!\\hyperref\[[^]]*',
-\ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-\ 're!\\(include(only)?|input){[^}]*',
-\ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-\ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-\ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-\ ]
-
-let g:vimtex_view_method = 'mupdf'
-let g:vimtex_latexmk_build_dir = 'build'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts

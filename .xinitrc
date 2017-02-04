@@ -4,25 +4,27 @@
 #
 
 # Load .Xresources
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I $HOME ~/.Xresources
 
 # Start applications
-nm-applet --sm-disable &
+nm-applet &
 dunst &
 xfce4-power-manager &
-redshift-gtk &
-insync start &
+fluxgui &
 unclutter &
+insync start &
 urxvtd -q -f -o
 
+# Background color
 xsetroot -solid "#282828"
-xinput --disable 11
+
+# Disable touchpad
+device=`xinput | grep TouchPad | grep -o "id=.." | grep -o "[0-9]*"`
+xinput --disable $device
 
 # Start WM
 exec i3
 
 # Start GNOME Keyring
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
