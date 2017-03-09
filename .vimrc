@@ -22,6 +22,7 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 

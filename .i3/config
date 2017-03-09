@@ -54,6 +54,9 @@ bindsym $mod+Control+1 exec google-chrome-stable
 
 # Display
 bindsym $mod+Delete exec slock
+bindsym $mod+Shift+Delete exec "systemctl suspend"
+bindcode $mod+20 exec "/home/fabian/.config/screenlayout/laptop.sh"
+bindcode $mod+21 exec "/home/fabian/.config/screenlayout/home.sh"
 
 # Volume
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5+"
