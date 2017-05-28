@@ -20,6 +20,11 @@ source $ZSH/oh-my-zsh.sh
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Tmux bell when command finishes
+precmd () {
+  echo -n -e "\a"
+}
+
 # Aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias gits="git status"
