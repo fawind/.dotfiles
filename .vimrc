@@ -114,6 +114,9 @@ let g:ctrlp_user_command = {'types': {
 " Scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Format json
+map <Leader>j :%!python -m json.tool<CR>
+
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -130,3 +133,6 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 " Remove highlighting on Enter.
 nnoremap <CR> :noh<CR><CR>
+
+" Write file with sudo permissions.
+cmap w!! w !sudo tee % >/dev/null

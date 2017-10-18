@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(z)
+plugins=(z vi-mode)
 
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
@@ -36,3 +36,4 @@ alias gitco="git checkout"
 alias gitl="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate"
 alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate --numstat"
 alias tms="~/.config/tmux/startTmux.sh"
+alias pss="pass show -c"
