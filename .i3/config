@@ -59,9 +59,9 @@ bindcode $mod+20 exec "/home/fabian/.config/screenlayout/laptop.sh"
 bindcode $mod+21 exec "/home/fabian/.config/screenlayout/home.sh"
 
 # Volume
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5+"
-bindsym XF86AudioLowerVolume exec "amixer set Master 5-"
-bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+bindsym XF86AudioMute exec "amixer -D pulse sset Master toggle"
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -nb '#282828' -nf '#a89984' -sb '#767676' -sf '#282828' -b

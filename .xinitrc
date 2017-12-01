@@ -13,7 +13,6 @@ xfce4-power-manager &
 fluxgui &
 unclutter &
 insync start &
-urxvtd -q -f -o
 
 # Background color
 xsetroot -solid "#282828"
