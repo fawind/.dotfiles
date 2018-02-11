@@ -130,6 +130,8 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype tex setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype json setlocal ts=2 sts=2 sw=2
+autocmd Filetype markdown setlocal ts=4 sts=4 sw=4
 
 " Remove highlighting on Enter.
 nnoremap <CR> :noh<CR><CR>

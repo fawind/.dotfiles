@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(z vi-mode)
+plugins=(z vi-mode bgnotify)
 
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"

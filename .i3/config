@@ -65,6 +65,7 @@ bindsym XF86AudioMute exec "amixer -D pulse sset Master toggle"
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -nb '#282828' -nf '#a89984' -sb '#767676' -sf '#282828' -b
+bindsym $mod+p exec passmenu -nb '#282828' -nf '#a89984' -sb '#767676' -sf '#282828' -b
 
 
 ################ Window Hotkeys ##################
