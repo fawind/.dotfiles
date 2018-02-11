@@ -5,7 +5,7 @@ general {
         colors = true
         interval = 5
 }
-
+order += "cpu_temperature 0"
 order += "battery 0"
 order += "tztime local"
 
@@ -15,4 +15,9 @@ battery 0 {
 
 tztime local {
         format = "%d.%m %H:%M"
+}
+
+
+cpu_temperature 0 {
+	format = " %degrees °C"
 }
