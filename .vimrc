@@ -23,6 +23,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim'
+Plug 'reedes/vim-pencil'
+Plug 'tomlion/vim-solidity'
+Plug 'lervag/vimtex'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -110,9 +114,32 @@ let g:ctrlp_user_command = {'types': {
     \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
     \ }, 'fallback': 'find %s -type f'}
 
+" Vimtex
+let g:vimtex_view_method = 'mupdf'
+let g:vimtex_latexmk_build_dir = 'localCompile'
+
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+\ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+\ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+\ 're!\\hyperref\[[^]]*',
+\ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+\ 're!\\(include(only)?|input){[^}]*',
+\ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+\ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+\ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+\ ]
+
+" Pencil
+let g:pencil#wrapModeDefault = 'soft'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype plugin on
 
 " Format json
 map <Leader>j :%!python -m json.tool<CR>
@@ -122,6 +149,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Intendation settings
 set expandtab
+set ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
@@ -132,6 +160,14 @@ autocmd Filetype tex setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype markdown setlocal ts=4 sts=4 sw=4
+
+" Text files
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,plaintex,tex call pencil#init()
+    \ | setlocal spell spelllang=en_us
+    \ | set conceallevel=0
+augroup END
 
 " Remove highlighting on Enter.
 nnoremap <CR> :noh<CR><CR>

@@ -4,3 +4,7 @@
 npm-debug.log
 __pycache__
 .ipynb_checkpoints
+
+ignore
+localCompile
+*.latexmain
