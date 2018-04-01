@@ -1,15 +1,28 @@
 set nocompatible
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Directories
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+silent call system('mkdir -p $HOME/.vim/undo')
+set undodir=$HOME/.vim/undo//
+
+silent call system('mkdir -p $HOME/.vim/swap')
+set directory=$HOME/.vim/swap//
+
+silent call system('mkdir -p $HOME/.vim/backup')
+set backupdir=$HOME/.vim/backup//
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Install plugin manager automatically
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
 
@@ -40,7 +53,6 @@ set relativenumber
 set cursorline
 syntax on
 set background=dark
-
 let g:gruvbox_termcolors=16
 let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox
@@ -49,8 +61,6 @@ set timeoutlen=1000
 set mouse=a
 set autoindent
 set scrolloff=5
-
-set noswapfile
 
 set splitbelow
 set splitright
@@ -64,10 +74,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-" Leader keys
-let mapleader=","
-let maplocalleader = "\\"
 
 " Autocomplete commands
 set wildmode=longest,list
@@ -139,16 +145,55 @@ let g:ycm_semantic_triggers.tex = [
 let g:pencil#wrapModeDefault = 'soft'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Scripts
+" Key Bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype plugin on
+" Leader keys
+let mapleader=","
+let maplocalleader = "\\"
+
+" Disable features
+map q: <nop>
+map Q <nop>
 
 " Format json
 map <Leader>j :%!python -m json.tool<CR>
 
+" Remove highlighting on enter
+nnoremap <CR> :noh<CR><CR>
+
+" Write file with sudo permissions
+cmap w!! w !sudo tee % >/dev/null
+
+" Line navigation
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+noremap k gk
+noremap H ^
+noremap L $
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Scripts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Return to last edit position when opening files.
+function! ResumeCursorPosition()
+  if line("'\"") > 0 && line("'\"") <= line("$") |
+    exe "normal! g`\"" |
+  endif
+endfunction
+autocmd BufReadPost * call ResumeCursorPosition()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Languages
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype plugin on
 
 " Intendation settings
 set expandtab
@@ -171,9 +216,3 @@ augroup pencil
     \ | setlocal spell spelllang=en_us
     \ | set conceallevel=0
 augroup END
-
-" Remove highlighting on Enter.
-nnoremap <CR> :noh<CR><CR>
-
-" Write file with sudo permissions.
-cmap w!! w !sudo tee % >/dev/null
