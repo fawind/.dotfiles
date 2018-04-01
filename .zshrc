@@ -27,6 +27,7 @@ precmd () {
 
 # Aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# Git
 alias gits="git status"
 alias gitd="git diff"
 alias gitc="git commit -m"
@@ -35,6 +36,8 @@ alias gitca="git commit --amend"
 alias gitco="git checkout"
 alias gitl="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate"
 alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate --numstat"
+# Programs
 alias tms="~/.config/tmux/startTmux.sh"
 alias pss="pass show -c"
-alias notes="(cd ~/Drive/Documents/Notebook && vim)"
+alias notes="(cd ~/notebook && vim)"
+alias chrome="google-chrome-stable"

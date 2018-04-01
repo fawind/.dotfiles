@@ -80,6 +80,9 @@ set clipboard=unnamedplus
 set autoread
 au CursorHold * checktime
 
+" Vimcrypt
+set cm=blowfish2
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
