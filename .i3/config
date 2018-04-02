@@ -63,6 +63,11 @@ bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
 bindsym XF86AudioMute exec "amixer -D pulse sset Master toggle"
 
+# Media
+bindsym XF86AudioPlay exec "playerctl play-pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrevious exec "playerctl previous"
+
 # Start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -nb '#282828' -nf '#a89984' -sb '#767676' -sf '#282828' -b
 bindsym $mod+p exec passmenu -nb '#282828' -nf '#a89984' -sb '#767676' -sf '#282828' -b
