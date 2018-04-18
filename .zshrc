@@ -39,5 +39,4 @@ alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]
 # Programs
 alias tms="~/.config/tmux/startTmux.sh"
 alias pss="pass show -c"
-alias notes="(cd ~/notebook && vim)"
 alias chrome="google-chrome-stable"
