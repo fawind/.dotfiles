@@ -18,16 +18,22 @@ def exec_cmd(cmd):
     subprocess.call([os.getenv('SHELL'), '-i', '-c', cmd])
 
 
-def open_notes():
-    exec_cmd(NOTES_COMMAND)
-
-
 def run_cmd(command):
     exec_cmd('(cd {} && {})'.format(NOTES_PATH, command))
 
 
+def open_notes():
+    exec_cmd(NOTES_COMMAND)
+
+
+def save_notes():
+    run_cmd('git add -A && git commit -m "Save notes" && git push')
+
+
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
+    if (len(sys.argv) == 2 and sys.argv[1] == 'save'):
+        save_notes()
+    elif len(sys.argv) > 1:
         run_cmd(get_command(sys.argv))
     else:
         open_notes()
