@@ -1,7 +1,7 @@
 # Oh-my-zsh
-export ZSH=/home/fabian/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-DEFAULT_USER="fabian"
+DEFAULT_USER="ntzr"
 
 ZSH_THEME="agnoster"
 

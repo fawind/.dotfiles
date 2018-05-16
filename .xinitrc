@@ -10,14 +10,16 @@
 nm-applet &
 dunst &
 xfce4-power-manager &
-fluxgui &
+redshift-gtk &
 unclutter &
-insync start &
+# insync start &
 
 # Background color
 xsetroot -solid "#282828"
 
-# Disable touchpad
+# Keyboard layout
+setxkbmap -layout us -variant altgr-intl -option nodeadkeys -option ctrl:nocaps
+# Disable trackpad
 device=`xinput | grep TouchPad | grep -o "id=.." | grep -o "[0-9]*"`
 xinput --disable $device
 

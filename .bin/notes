@@ -4,7 +4,7 @@ import sys
 import os
 import subprocess
 
-NOTES_PATH = '/home/fabian/notebook'
+NOTES_PATH = '~/notebook'
 NOTES_COMMAND = '(cd {} && vim)'.format(NOTES_PATH)
 
 
