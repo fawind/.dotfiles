@@ -1,0 +1,4 @@
+set nocompatible
+
+" Use X clipboard as default
+set clipboard=unnamedplus
