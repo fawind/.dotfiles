@@ -40,3 +40,4 @@ alias gitll="git log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]
 alias tms="~/.config/tmux/startTmux.sh"
 alias pss="pass show -c"
 alias chrome="google-chrome-stable"
+alias vim="vim --servername vim"
