@@ -40,6 +40,7 @@ Plug 'reedes/vim-pencil'
 Plug 'tomlion/vim-solidity'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
+Plug '907th/vim-auto-save'
 
 call plug#end()
 
@@ -143,6 +144,10 @@ let g:ycm_semantic_triggers.tex = [
 
 " Pencil
 let g:pencil#wrapModeDefault = 'soft'
+
+" Autosave
+let g:auto_save = 1
+let g:auto_save_events = ["InsertLeave"]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Bindings
