@@ -12,7 +12,7 @@ dunst &
 xfce4-power-manager &
 redshift-gtk &
 unclutter &
-# insync start &
+insync start &
 
 # Background color
 xsetroot -solid "#282828"
