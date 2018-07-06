@@ -20,7 +20,7 @@ xsetroot -solid "#282828"
 # Keyboard layout
 setxkbmap -layout us -variant altgr-intl -option nodeadkeys -option ctrl:nocaps
 # Disable trackpad
-device=`xinput | grep TouchPad | grep -o "id=.." | grep -o "[0-9]*"`
+device=`xinput | grep Synaptics | grep -o "id=.." | grep -o "[0-9]*"`
 xinput --disable $device
 
 # Start WM
