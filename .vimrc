@@ -1,4 +1,5 @@
 set nocompatible
+set pyx=3
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Directories
@@ -26,21 +27,29 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" Tools
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py' }
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/goyo.vim'
+Plug '907th/vim-auto-save'
+
+" Syntax
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
 Plug 'leafgarland/typescript-vim'
+
+" Languages
 Plug 'reedes/vim-pencil'
-Plug 'tomlion/vim-solidity'
 Plug 'lervag/vimtex'
-Plug 'junegunn/goyo.vim'
-Plug '907th/vim-auto-save'
+
+" Code intel
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -94,26 +103,13 @@ set cm=blowfish2
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_complete_in_comments=0
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_max_diagnostics_to_display=10
-
-set statusline+=%=%{SyntasticStatuslineFlag()}
-
-" jedi-vim
-let g:jedi#completions_enabled=0
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " IndentLine
 let g:indentLine_conceallevel = 0
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
 
 " Nerdtree
 map <C-x> :NERDTreeToggle<CR>
@@ -127,20 +123,6 @@ let g:ctrlp_user_command = {'types': {
 " Vimtex
 let g:vimtex_view_method = 'mupdf'
 let g:vimtex_latexmk_build_dir = 'localCompile'
-
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-\ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-\ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-\ 're!\\hyperref\[[^]]*',
-\ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-\ 're!\\(include(only)?|input){[^}]*',
-\ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-\ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-\ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-\ ]
 
 " Pencil
 let g:pencil#wrapModeDefault = 'soft'
