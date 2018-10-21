@@ -8,3 +8,8 @@ __pycache__
 ignore
 localCompile
 *.latexmain
+
+# Vimtex
+*.fdb_latexmk
+*.fls
+*.synctex.gz

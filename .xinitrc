@@ -10,9 +10,9 @@
 nm-applet &
 dunst &
 xfce4-power-manager &
-redshift-gtk &
 unclutter &
 insync start &
+redshift-gtk -c ~/.config/redshift.config &
 
 # Background color
 xsetroot -solid "#282828"
