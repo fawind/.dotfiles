@@ -1,5 +1,4 @@
 set nocompatible
-set pyx=3
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Directories
@@ -29,26 +28,17 @@ call plug#begin('~/.vim/plugged')
 
 " Tools
 Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/goyo.vim'
 Plug '907th/vim-auto-save'
 
 " Syntax
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
-Plug 'leafgarland/typescript-vim'
-
-" Languages
-Plug 'reedes/vim-pencil'
-Plug 'lervag/vimtex'
 
 " Code intel
 Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -97,7 +87,7 @@ set autoread
 au CursorHold * checktime
 
 " Vimcrypt
-set cm=blowfish2
+" set cm=blowfish2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
@@ -149,6 +139,9 @@ map <Leader>j :%!python -m json.tool<CR>
 " Remove highlighting on enter
 nnoremap <CR> :noh<CR><CR>
 
+" Toggle paste
+set pastetoggle=<F12>
+
 " Write file with sudo permissions
 cmap w!! w !sudo tee % >/dev/null
 
@@ -195,11 +188,3 @@ autocmd Filetype tex setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype markdown setlocal ts=4 sts=4 sw=4
-
-" Text files
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,plaintex,tex call pencil#init()
-    \ | setlocal spell spelllang=en_us
-    \ | set conceallevel=0
-augroup END
