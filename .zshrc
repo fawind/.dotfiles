@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(z bgnotify)
+plugins=(z bgnotify zsh-syntax-highlighting)
 
 # Export display for Crostini
 export DISPLAY=:0
@@ -23,6 +23,8 @@ precmd () {
   echo -n -e "\a"
 }
 
+# Aliases
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # Git
 alias gits="git status"
 alias gitd="git diff"
