@@ -150,7 +150,6 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-noremap k gk
 noremap H ^
 noremap L $
 
