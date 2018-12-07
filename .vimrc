@@ -40,6 +40,13 @@ Plug 'Yggdroot/indentLine'
 " Code intel
 Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
+" Python
+Plug 'zchee/deoplete-jedi'
+Plug 'vim-python/python-syntax'
+" TypeScript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
 
 call plug#end()
 
@@ -93,10 +100,18 @@ au CursorHold * checktime
 " Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Ale
+let g:ale_completion_enabled = 1
+map <C-b> :ALEGoToDefinition<CR>
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+" Pthon syntax
+let g:python_highlight_all = 1
 
 " IndentLine
 let g:indentLine_conceallevel = 0
@@ -109,13 +124,6 @@ let g:ctrlp_working_path_mode='a'
 let g:ctrlp_user_command = {'types': {
     \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others']
     \ }, 'fallback': 'find %s -type f'}
-
-" Vimtex
-let g:vimtex_view_method = 'mupdf'
-let g:vimtex_latexmk_build_dir = 'localCompile'
-
-" Pencil
-let g:pencil#wrapModeDefault = 'soft'
 
 " Autosave
 let g:auto_save = 1
