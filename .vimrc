@@ -46,7 +46,9 @@ Plug 'vim-python/python-syntax'
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-
+" Go
+Plug 'zchee/deoplete-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -129,6 +131,10 @@ let g:ctrlp_user_command = {'types': {
 let g:auto_save = 1
 let g:auto_save_events = ["InsertLeave"]
 
+" vim-go
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -160,6 +166,9 @@ noremap gj j
 noremap gk k
 noremap H ^
 noremap L $
+
+" Buffer switching
+noremap <C-i> :bprev<Cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scripts

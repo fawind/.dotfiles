@@ -16,6 +16,11 @@ export DISPLAY=:0
 # Custom programs
 export PATH="/home/$USER/.bin:$PATH"
 
+# GoPath
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 # Tmux bell when command finishes
