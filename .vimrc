@@ -49,6 +49,9 @@ Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Go
 Plug 'zchee/deoplete-go'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+Plug 'parsonsmatt/intero-neovim'
 
 call plug#end()
 
@@ -134,6 +137,10 @@ let g:auto_save_events = ["InsertLeave"]
 " vim-go
 let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
+
+" Intero
+au BufWritePost *.hs InteroReload
+au FileType haskell nnoremap <silent> <C-b> :InteroGoToDef<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Bindings

@@ -14,7 +14,7 @@ plugins=(z bgnotify zsh-syntax-highlighting)
 export DISPLAY=:0
 
 # Custom programs
-export PATH="/home/$USER/.bin:$PATH"
+export PATH="/home/$USER/.bin:/home/$USER/.local/bin:$PATH"
 
 # GoPath
 export GOROOT="/usr/local/go"
