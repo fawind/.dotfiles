@@ -15,6 +15,8 @@ export DISPLAY=:0
 
 # Custom programs
 export PATH="/home/$USER/.bin:/home/$USER/.local/bin:$PATH"
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 
 # GoPath
 export GOROOT="/usr/local/go"
