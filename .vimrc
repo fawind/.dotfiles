@@ -43,6 +43,7 @@ Plug 'w0rp/ale'
 " Python
 Plug 'zchee/deoplete-jedi'
 Plug 'vim-python/python-syntax'
+Plug 'ambv/black'
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -136,7 +137,9 @@ let g:auto_save_events = ["InsertLeave"]
 
 " vim-go
 let g:go_auto_sameids = 1
-let g:go_auto_type_info = 1
+
+" vim-black
+autocmd BufWritePre *.py execute ':Black'
 
 " Intero
 au BufWritePost *.hs InteroReload
