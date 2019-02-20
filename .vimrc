@@ -43,7 +43,6 @@ Plug 'w0rp/ale'
 " Python
 Plug 'zchee/deoplete-jedi'
 Plug 'vim-python/python-syntax'
-Plug 'ambv/black'
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -100,7 +99,9 @@ set autoread
 au CursorHold * checktime
 
 " Vimcrypt
-" set cm=blowfish2
+if !has('nvim')
+  set cm=blowfish2
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings

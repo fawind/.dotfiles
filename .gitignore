@@ -8,10 +8,11 @@ __pycache__
 .mypy_cache
 
 ignore
-localCompile
-*.latexmain
 
-# Vimtex
+# Latex
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+localCompile
+*.latexmain
+latexdockercmd.sh

@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 DEFAULT_USER="windheuserfabian"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster-slim"
 
 COMPLETION_WAITING_DOTS="true"
 
