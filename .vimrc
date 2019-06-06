@@ -43,9 +43,9 @@ Plug 'w0rp/ale'
 " Python
 Plug 'zchee/deoplete-jedi'
 Plug 'vim-python/python-syntax'
+" Plug 'ambv/black'
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Go
 Plug 'zchee/deoplete-go'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -140,7 +140,7 @@ let g:auto_save_events = ["InsertLeave"]
 let g:go_auto_sameids = 1
 
 " vim-black
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
 
 " Intero
 au BufWritePost *.hs InteroReload
@@ -199,6 +199,11 @@ autocmd BufReadPost * call ResumeCursorPosition()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Languages
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlight tabs
+highlight SpecialKey ctermfg=1
+set list
+set listchars=tab:T>
 
 filetype plugin on
 
