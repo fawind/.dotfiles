@@ -32,6 +32,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug '907th/vim-auto-save'
+Plug 'junegunn/goyo.vim'
 
 " Syntax
 Plug 'morhetz/gruvbox'
@@ -52,6 +53,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 Plug 'parsonsmatt/intero-neovim'
+" Latex
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -146,6 +149,10 @@ let g:go_auto_sameids = 1
 au BufWritePost *.hs InteroReload
 au FileType haskell nnoremap <silent> <C-b> :InteroGoToDef<CR>
 
+" Goyo
+let g:goyo_height = '100%'
+let g:goyo_linenr = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -166,6 +173,9 @@ nnoremap <CR> :noh<CR><CR>
 
 " Toggle paste
 set pastetoggle=<F12>
+
+" Toggle Goyo
+map <Leader>g :Goyo<CR>
 
 " Write file with sudo permissions
 cmap w!! w !sudo tee % >/dev/null
@@ -216,7 +226,7 @@ autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
-autocmd Filetype tex setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
-autocmd Filetype markdown setlocal ts=4 sts=4 sw=4
+autocmd Filetype markdown setlocal ts=4 sts=4 sw=4 linebreak
+autocmd Filetype tex setlocal ts=2 sts=2 sw=2 linebreak
